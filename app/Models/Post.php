@@ -27,4 +27,24 @@ class Post extends Model
             ]
         ];
     }
+
+    public static function uploadImage(Request $request, $image = null)
+    {
+        if ($request->hasFile('thumbnail')) {
+            if ($image) {
+                Storage::delete($image);
+            }
+            $folder = date('Y-m-d');
+            return $request->file('thumbnail')->store("image/{$folder}");
+        }
+        return null;
+    }
+
+    public function getImage() 
+    {
+        if (!$this->thumbnail) {
+            return asset("no-image.png");
+        }
+        return asset("uploads/{$this->thumbnail}");
+    }
 }

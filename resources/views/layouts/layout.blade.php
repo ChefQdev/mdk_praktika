@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="../assets/admin/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -96,12 +98,6 @@
         </ul>
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{ route('admin.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-home"></i>
-              <p>Главная</p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -123,6 +119,31 @@
                 </a>
               </li>
             </ul>
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+               Статьи
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../../index.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Список статей</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Новая статья</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
           </li>
         </ul>
       </nav>
@@ -204,5 +225,15 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/js/demo.js') }}"></script>
+
+<script src="../../plugins/select2/js/select2.full.min.js"></script>
+<script>
+  $(function () {
+    $('.select2').select2()
+    $('select2bs4').select2({
+      theme: "bootstrap4"
+    })
+  })
+</script>
 </body>
 </html>

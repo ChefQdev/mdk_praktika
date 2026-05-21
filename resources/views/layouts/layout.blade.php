@@ -17,6 +17,12 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{session('success')}}
+            </div>
+        @endif
+
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->

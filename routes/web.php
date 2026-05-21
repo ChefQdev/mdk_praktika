@@ -22,4 +22,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('tags', TagsController::class);
     Route::resource('posts', PostController::class);
+    Route::get('/register', [UserController::class, 'create'])->name('register.create');
+    Route::post('/register', [UserController::class, 'store'])->name('register.store');
+    Route::get('/', function() {
+        return view('welcome');
+    })->name('home');
 });

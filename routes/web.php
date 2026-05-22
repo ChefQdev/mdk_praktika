@@ -34,5 +34,6 @@ Route::group(['middleware' => 'guest'], function() {
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
 
 Route::get('/', [PostController::class, 'index'])->name('home');
-Route::get('/article', [PostController::class, 'show'])->name('posts.single');
+Route::get('/article/{slug}', [PostController::class, 'show'])->name('posts.single');
+Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('categories.single')
 

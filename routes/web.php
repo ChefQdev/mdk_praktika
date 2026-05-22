@@ -33,3 +33,6 @@ Route::group(['middleware' => 'guest'], function() {
     Route::post('/login',[UserController::class, 'login'])->name('login');
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
 
+Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/article', [PostController::class, 'show'])->name('posts.single');
+

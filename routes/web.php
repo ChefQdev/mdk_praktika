@@ -35,5 +35,6 @@ Route::group(['middleware' => 'guest'], function() {
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('/article/{slug}', [PostController::class, 'show'])->name('posts.single');
-Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('categories.single')
+Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('categories.single');
+Route::get('/tag/{slug}', [TagController::class, 'show'])->name('tags.single');
 

@@ -272,30 +272,6 @@
         </div>
     </div>
 
-        <div class="single-post-media">
-
-        <img src="{{ $post->image }}" alt="{{ $post->title }}" class="img-fluid">
-    </div>
-
-    <div class="blog-content">
-        {!! $post->content !!}
-    </div>
-
-    <div class="blog-title-area">
-        @if($post->tags->count())
-            <div class="tag-cloud-single">
-                <span>Tags</span>
-                @foreach($post->tags as $tag)
-                    <small>
-                        <a href="{{ route('tags.single', ['slug' => $tag->slug]) }}" title="{{ $tag->title }}">
-                            {{ $tag->title }}
-                        </a>
-                    </small>
-                @endforeach
-            </div>
-        @endif
-    </div>
-
     <section id="home" class="hero">
         <div class="container hero-content">
             <h1>Цифровой маркетинг нового поколения</h1>
